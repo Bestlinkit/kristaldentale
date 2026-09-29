@@ -23,7 +23,7 @@ export default function Footer() {
           
           {/* Column 1: Brand & Overview (md:col-span-4) */}
           <div className="md:col-span-4 space-y-4">
-            <KristalLogo variant="light" size="lg" />
+            <KristalLogo variant="light" size="md" />
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
               Professional dental care in Oke Aro, Akure, Ondo State.
             </p>
