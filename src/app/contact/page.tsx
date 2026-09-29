@@ -5,16 +5,52 @@ import { ChevronRight, Phone, MapPin, ExternalLink } from "lucide-react";
 import { IoLogoWhatsapp, IoLogoTiktok } from "react-icons/io5";
 import { CLINIC_INFO } from "@/data/clinicData";
 import AppointmentForm from "@/components/site/appointment-form";
+import { buildPageMetadata, generateBreadcrumbJsonLd, SITE_URL } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact Us & Book Appointment | Kristal Dentale Clinic Akure",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Book Dental Appointment in Akure | Kristal Dentale Clinic",
   description:
-    "Contact Kristal Dentale Clinic in Oke Aro, Akure. Phone: 0813 428 0545. WhatsApp: +234 813 428 0545. Request your dental appointment online.",
-};
+    "Contact Kristal Dentale Clinic at 116 Idanre Road, Oke Aro, Akure. Phone: 0813 428 0545. WhatsApp: +234 813 428 0545. Request your dental appointment online.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
+  const breadcrumbSchema = generateBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Contact & Appointments", path: "/contact" },
+  ]);
+
+  const contactPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": `${SITE_URL}/contact#webpage`,
+    url: `${SITE_URL}/contact`,
+    name: "Book Dental Appointment in Akure | Kristal Dentale Clinic",
+    description:
+      "Contact Kristal Dentale Clinic in Oke Aro, Akure. Phone: 0813 428 0545. WhatsApp: +234 813 428 0545. Request your dental appointment online.",
+    isPartOf: {
+      "@id": `${SITE_URL}/#website`,
+    },
+    about: {
+      "@id": `${SITE_URL}/#clinic`,
+    },
+    inLanguage: "en-NG",
+  };
+
   return (
     <div className="bg-[#FFFFFF] text-[#0B1730]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(contactPageSchema),
+        }}
+      />
       
       {/* 1. Header with Breadcrumb */}
       <section className="pt-10 pb-16 bg-gradient-to-b from-[#EEF6FC]/60 to-[#FFFFFF] border-b border-[#E8EDF3]">

@@ -7,6 +7,12 @@ import { ChevronRight, Calendar } from "lucide-react";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { SERVICES_DATA, CLINIC_INFO } from "@/data/clinicData";
 import ServiceIcon from "@/components/site/service-icon";
+import { 
+  buildPageMetadata, 
+  generateBreadcrumbJsonLd, 
+  generateServiceJsonLd, 
+  SITE_URL 
+} from "@/lib/seo";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -26,10 +32,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Service Not Found" };
   }
 
-  return {
-    title: `${service.title} | Kristal Dentale Clinic Akure`,
-    description: `${service.shortDescription} Professional dental treatment at Kristal Dentale Clinic, 116 Idanre Road, Oke Aro, Akure. Phone: 0813 428 0545.`,
-  };
+  return buildPageMetadata({
+    title: `${service.title} in Akure | Kristal Dentale Clinic`,
+    description: `${service.description} Professional dental care at Kristal Dentale Clinic in Oke Aro, Akure, Ondo State. Phone: 0813 428 0545.`,
+    path: `/services/${service.slug}`,
+    image: service.image,
+  });
 }
 
 export default async function ServiceDetailPage({ params }: PageProps) {
@@ -39,6 +47,19 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   if (!service) {
     notFound();
   }
+
+  const breadcrumbSchema = generateBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Dental Services", path: "/services" },
+    { name: service.title, path: `/services/${service.slug}` },
+  ]);
+
+  const serviceSchema = generateServiceJsonLd({
+    name: service.title,
+    description: service.description,
+    path: `/services/${service.slug}`,
+    image: service.image,
+  });
 
   const clinicalImage = service.image;
   const clinicalImageAlt = `${service.title} treatment at Kristal Dentale Clinic`;
@@ -72,6 +93,18 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
   return (
     <div className="bg-[#FFFFFF] text-[#0B1730]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema),
+        }}
+      />
       
       {/* 1. Header with Breadcrumb & Hero */}
       <section className="pt-10 pb-16 bg-gradient-to-b from-[#EEF6FC]/60 via-[#FFFFFF] to-[#FFFFFF] border-b border-[#E8EDF3]">

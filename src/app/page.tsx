@@ -1,6 +1,5 @@
-"use client";
-
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { 
@@ -15,11 +14,41 @@ import HeroSection from "@/components/site/hero-section";
 import ServiceCard from "@/components/site/service-card";
 import AppointmentForm from "@/components/site/appointment-form";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import { buildPageMetadata, SITE_URL } from "@/lib/seo";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Kristal Dentale Clinic | Dentist in Akure, Ondo State",
+  description:
+    "Kristal Dentale Clinic provides professional dental care in Oke Aro, Akure, including general, restorative, orthodontic and cosmetic dental treatments.",
+  path: "/",
+});
 
 export default function HomePage() {
+  const webpageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE_URL}/#webpage`,
+    url: SITE_URL,
+    name: "Kristal Dentale Clinic | Dentist in Akure, Ondo State",
+    description:
+      "Kristal Dentale Clinic provides professional dental care in Oke Aro, Akure, including general, restorative, orthodontic and cosmetic dental treatments.",
+    isPartOf: {
+      "@id": `${SITE_URL}/#website`,
+    },
+    about: {
+      "@id": `${SITE_URL}/#clinic`,
+    },
+    inLanguage: "en-NG",
+  };
 
   return (
     <div className="bg-[#FFFFFF] text-[#0B1730]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webpageSchema),
+        }}
+      />
       
       {/* =========================================================
           1. HERO SECTION (Terra Academy Inspired Architecture)

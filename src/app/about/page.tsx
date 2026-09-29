@@ -13,16 +13,52 @@ import {
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { CLINIC_INFO, SERVICES_DATA } from "@/data/clinicData";
 import AppointmentForm from "@/components/site/appointment-form";
+import { buildPageMetadata, generateBreadcrumbJsonLd, SITE_URL } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About Us & Leadership | Kristal Dentale Clinic Akure",
+export const metadata: Metadata = buildPageMetadata({
+  title: "About Kristal Dentale Clinic | Dental Practice in Akure, Ondo State",
   description:
     "Learn about Kristal Dentale Clinic in Oke Aro, Akure, Ondo State. Meet Dr. Olupona and discover our patient-focused approach to dental care.",
-};
+  path: "/about",
+});
 
 export default function AboutPage() {
+  const breadcrumbSchema = generateBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+  ]);
+
+  const aboutPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": `${SITE_URL}/about#webpage`,
+    url: `${SITE_URL}/about`,
+    name: "About Kristal Dentale Clinic | Dental Practice in Akure, Ondo State",
+    description:
+      "Learn about Kristal Dentale Clinic in Oke Aro, Akure, Ondo State. Meet Dr. Olupona and discover our patient-focused approach to dental care.",
+    isPartOf: {
+      "@id": `${SITE_URL}/#website`,
+    },
+    about: {
+      "@id": `${SITE_URL}/#clinic`,
+    },
+    inLanguage: "en-NG",
+  };
+
   return (
     <div className="bg-[#FFFFFF] text-[#0B1730]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aboutPageSchema),
+        }}
+      />
       
       {/* =========================================================
           1. HERO SECTION

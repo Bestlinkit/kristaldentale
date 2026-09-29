@@ -5,16 +5,49 @@ import { ChevronRight, Calendar } from "lucide-react";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { SERVICES_DATA, CLINIC_INFO } from "@/data/clinicData";
 import ServiceCard from "@/components/site/service-card";
+import { buildPageMetadata, generateBreadcrumbJsonLd, SITE_URL } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Dental Services & Treatments | Kristal Dentale Clinic Akure",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Dental Services & Treatments in Akure | Kristal Dentale Clinic",
   description:
-    "Comprehensive dental treatments at Kristal Dentale Clinic led by Dr. Olupona in Akure: Orthodontics, Bridges & Crowns, Veneers, Teeth Whitening, Implants, Fillings and routine oral care.",
-};
+    "Explore dental treatments at Kristal Dentale Clinic in Oke Aro, Akure: Orthodontics, bridges, crowns, veneers, teeth whitening, implants, fillings and cleanings.",
+  path: "/services",
+});
 
 export default function ServicesPage() {
+  const breadcrumbSchema = generateBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Dental Services", path: "/services" },
+  ]);
+
+  const serviceListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Dental Services at Kristal Dentale Clinic",
+    description: "Professional dental care services provided in Oke Aro, Akure, Ondo State.",
+    itemListElement: SERVICES_DATA.map((service, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: service.title,
+      url: `${SITE_URL}/services/${service.slug}`,
+      description: service.shortDescription,
+    })),
+  };
+
   return (
     <div className="bg-[#FFFFFF] text-[#0B1730]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceListSchema),
+        }}
+      />
       
       {/* Breadcrumb & Hero Header (Terra Academy Inspired) */}
       <section className="pt-12 pb-16 bg-gradient-to-b from-[#EEF6FC]/60 via-[#FFFFFF] to-[#FFFFFF] border-b border-[#E8EDF3]">
