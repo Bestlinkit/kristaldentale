@@ -110,13 +110,13 @@ export default function HomePage() {
             <div className="absolute bottom-6 left-6 right-6 sm:left-10 sm:right-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4 text-white">
               <div className="max-w-2xl">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#FFA1D8] block mb-1">
-                  LEAD CLINICIAN &amp; PRACTICE DIRECTOR
+                  DENTIST &amp; PRACTICE DIRECTOR
                 </span>
                 <h3 className="text-xl sm:text-2xl font-extrabold text-white">
                   Meet Dr. Olupona
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 mt-1.5 leading-relaxed">
-                  Dr. Olupona leads the clinical care at Kristal Dentale Clinic, with a patient-focused approach to diagnosis, treatment and follow-up. Whether you are visiting for a routine dental concern, orthodontic treatment or restorative care, our aim is to make the process clear, comfortable and well explained.
+                  Dr. Olupona leads the dental care at Kristal Dentale Clinic, with a patient-focused approach to diagnosis, treatment and follow-up. Whether you are visiting for a routine dental concern, orthodontic treatment or restorative care, our aim is to make the process clear, comfortable and well explained.
                 </p>
               </div>
 
@@ -125,7 +125,7 @@ export default function HomePage() {
                   href="/about"
                   className="inline-flex items-center gap-2 text-xs font-bold text-[#07152F] bg-white hover:bg-slate-100 px-4 py-2.5 rounded-xl transition-all shadow-sm"
                 >
-                  <span>Meet Our Clinician</span>
+                  <span>Meet Our Dentist</span>
                   <span aria-hidden="true">→</span>
                 </Link>
               </div>

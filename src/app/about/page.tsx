@@ -137,7 +137,7 @@ export default function AboutPage() {
                 <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border-2 border-white bg-slate-100">
                   <Image
                     src="/images/ceo.jpg"
-                    alt="Dr. Olupona - Lead Clinician & Practice Director at Kristal Dentale Clinic"
+                    alt="Dr. Olupona - Dentist & Practice Director at Kristal Dentale Clinic"
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 40vw"
@@ -153,7 +153,7 @@ export default function AboutPage() {
                           Dr. Olupona
                         </p>
                         <p className="text-xs text-[#E83A9B] font-bold">
-                          Lead Clinician &amp; Practice Director
+                          Dentist &amp; Practice Director
                         </p>
                       </div>
                       <span className="w-8 h-8 rounded-full bg-[#FFF1F8] text-[#E83A9B] flex items-center justify-center font-bold text-xs">
@@ -165,7 +165,7 @@ export default function AboutPage() {
 
                 <div className="absolute -top-3 -right-3 bg-[#07152F] text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-md flex items-center gap-1.5 border border-white/20">
                   <Award className="w-3.5 h-3.5 text-[#E83A9B]" />
-                  <span>Lead Clinician</span>
+                  <span>Dentist</span>
                 </div>
               </div>
             </div>
@@ -180,7 +180,7 @@ export default function AboutPage() {
                   Meet Dr. Olupona
                 </h2>
                 <p className="text-sm font-bold text-[#1765A8] mt-1">
-                  Lead Clinician &amp; Practice Director
+                  Dentist &amp; Practice Director
                 </p>
               </div>
 

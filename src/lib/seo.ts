@@ -38,7 +38,7 @@ export const CLINIC_SEO_DATA = {
   ],
   leadClinician: {
     name: "Dr. Olupona",
-    jobTitle: "Lead Clinician & Practice Director",
+    jobTitle: "Dentist & Practice Director",
   },
   sameAs: [
     "https://www.tiktok.com/@kristaldentaleclinic",

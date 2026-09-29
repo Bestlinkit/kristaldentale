@@ -15,8 +15,8 @@ export const CLINIC_INFO = {
   alternateName: "Kristal Dental Clinic Akure",
   leadClinician: {
     name: "Dr. Olupona",
-    title: "Lead Clinician & Practice Director",
-    role: "Lead Clinician & Practice Director",
+    title: "Dentist & Practice Director",
+    role: "Dentist & Practice Director",
     image: "/images/ceo.jpg",
     quote: "Our goal is simple — when you visit us, we want you to feel relaxed, heard, and cared for. We explain your treatment options clearly and provide appropriate care based on your individual needs."
   },

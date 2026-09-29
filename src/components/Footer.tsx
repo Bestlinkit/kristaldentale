@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { Phone, MapPin, MessageCircle, ArrowRight } from "lucide-react";
-import KristalLogo from "./KristalLogo";
 import { CLINIC_INFO, SERVICES_DATA } from "@/data/clinicData";
 
 export default function Footer() {
@@ -14,7 +13,11 @@ export default function Footer() {
           
           {/* Column 1: Clinic Overview & Logo */}
           <div className="md:col-span-4 space-y-4">
-            <KristalLogo variant="light" size="md" />
+            <Link href="/" className="inline-block focus:outline-none">
+              <span className="font-serif text-xl font-bold tracking-tight text-white hover:text-[#E6007A] transition-colors">
+                {CLINIC_INFO.name}
+              </span>
+            </Link>
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm pt-2">
               Kristal Dentale Clinic provides professional dental care, orthodontics, and restorative treatments in Oke Aro, Akure, Ondo State.
             </p>

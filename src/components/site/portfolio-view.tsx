@@ -192,7 +192,7 @@ export default function PortfolioView() {
                       <span className="font-extrabold text-[#0B1730]">Ceramic Restoration</span>
                     </div>
                     <div className="flex items-center justify-between text-xs py-1.5 border-b border-[#E8EDF3]/60">
-                      <span className="font-bold text-[#64748B]">Lead Clinician:</span>
+                      <span className="font-bold text-[#64748B]">Dentist:</span>
                       <span className="font-extrabold text-[#1765A8]">Dr. Olupona</span>
                     </div>
                     <div className="flex items-center justify-between text-xs py-1.5">

@@ -45,7 +45,7 @@ export default function HeroSection() {
             <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/15 px-3.5 py-1.5 rounded-full text-xs">
               <span className="w-2.5 h-2.5 rounded-full bg-[#25D366] animate-pulse shadow-[0_0_8px_#25D366]" />
               <span className="text-slate-300 font-medium">
-                Dental Clinic in Oke Aro, Akure &bull; Lead Clinician: <strong className="text-white font-bold">Dr. Olupona</strong>
+                Dental Clinic in Oke Aro, Akure &bull; Dentist: <strong className="text-white font-bold">Dr. Olupona</strong>
               </span>
             </div>
 
@@ -111,7 +111,7 @@ export default function HeroSection() {
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border-2 border-white/15 bg-slate-900 shadow-2xl">
                 <Image
                   src="/images/ceo.jpg"
-                  alt="Dr. Olupona - Lead Clinician & Practice Director at Kristal Dentale Clinic"
+                  alt="Dr. Olupona - Dentist & Practice Director at Kristal Dentale Clinic"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -124,7 +124,7 @@ export default function HeroSection() {
                 {/* Clinician Badges */}
                 <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-[#07152F]/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-[11px] font-bold text-white">
                   <Award className="w-3.5 h-3.5 text-[#E83A9B]" />
-                  <span>Lead Clinician</span>
+                  <span>Dentist</span>
                 </div>
 
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white">
@@ -134,7 +134,7 @@ export default function HeroSection() {
                         Dr. Olupona
                       </p>
                       <p className="text-xs text-[#FFA1D8] font-semibold">
-                        Lead Clinician &amp; Practice Director
+                        Dentist &amp; Practice Director
                       </p>
                       <p className="text-[11px] text-slate-300 mt-1">
                         Oke Aro, Akure, Ondo State
@@ -174,7 +174,7 @@ export default function HeroSection() {
 
             <div className="border-r border-white/10 pr-4">
               <strong className="text-xl sm:text-2xl font-black text-white block">Dr. Olupona</strong>
-              <span className="text-xs text-slate-300 uppercase tracking-wider font-semibold">Lead Clinician</span>
+              <span className="text-xs text-slate-300 uppercase tracking-wider font-semibold">Dentist</span>
             </div>
 
             <div className="col-span-2 sm:col-span-1 flex justify-start lg:justify-end">

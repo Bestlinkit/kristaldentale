@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { IoLogoWhatsapp, IoLogoTiktok } from "react-icons/io5";
-import KristalLogo from "@/components/KristalLogo";
 import { CLINIC_INFO, SERVICES_DATA } from "@/data/clinicData";
 
 export default function Footer() {
@@ -23,7 +22,11 @@ export default function Footer() {
           
           {/* Column 1: Brand & Overview (md:col-span-4) */}
           <div className="md:col-span-4 space-y-4">
-            <KristalLogo variant="light" size="md" />
+            <Link href="/" className="inline-block focus:outline-none">
+              <span className="font-serif text-xl font-bold tracking-tight text-white hover:text-[#E83A9B] transition-colors">
+                {CLINIC_INFO.name}
+              </span>
+            </Link>
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
               Professional dental care in Oke Aro, Akure, Ondo State.
             </p>
